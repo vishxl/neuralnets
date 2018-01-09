@@ -13,3 +13,6 @@ model = Sequential([
 ])
 
 model.summary()
+
+model.compile(Adam (lr=.0001), loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+model.fit(scaled_train_samples, train_lables, batch_size = 10, epochs = 20, suffle = True, verbose = 2 )
