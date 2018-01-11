@@ -63,11 +63,11 @@ model.summary()
 
 model.compile(Adam(lr=.0001), loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
-valid_set = [(sample, label), (sample, label), - , (sample, label)]
+#valid_set = [(sample, label), (sample, label), - , (sample, label)]
 
 
-model.fit(scaled_train_samples, train_labels, validation_data= valid_sets, batch_size=10, epochs=40, shuffle=True, verbose=2)
+model.fit(scaled_train_samples, train_labels, validation_split=0.1, batch_size=10, epochs=40, shuffle=True, verbose=2)
 
 
-
+model.save('medical_trial_model.h5')
 
