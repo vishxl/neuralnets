@@ -63,7 +63,11 @@ model.summary()
 
 model.compile(Adam(lr=.0001), loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
-model.fit(scaled_train_samples, train_labels, validation_split=0.1, batch_size=10, epochs=20, shuffle=True, verbose=2)
+valid_set = [(sample, label), (sample, label), - , (sample, label)]
 
 
-model.compile(Adam (lr=.0001), loss='sparse_categorical_crossentropy', metrices=[accuracy])
+model.fit(scaled_train_samples, train_labels, validation_data= valid_sets, batch_size=10, epochs=40, shuffle=True, verbose=2)
+
+
+
+
