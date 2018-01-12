@@ -71,3 +71,8 @@ model.fit(scaled_train_samples, train_labels, validation_split=0.1, batch_size=1
 
 model.save('medical_trial_model.h5')
 
+
+from keras.models import load_model
+new_model = load_model('medical_trial_model.h5')
+
+new_model.summary()
