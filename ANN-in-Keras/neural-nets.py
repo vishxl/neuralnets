@@ -129,4 +129,6 @@ for i in range(200):
  test_labels = np.array(test_labels)
 test_samples = np.array(test_samples)
 
+scaler = MinMaxScaler(feature_range=(0,1))
+scaled_test_samples = scaler.fit_transform((test_samples).reshape(-1,1))
 
