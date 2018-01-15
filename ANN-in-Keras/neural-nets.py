@@ -79,3 +79,12 @@ new_model.summary()
 
 new_model.get_weights()
 new_model.optimizer
+
+#model.to_json()
+
+json_string = model.to_json()
+
+from keras.models import model_from_json
+model_architecture = model_from_json(json_string)
+
+model_architecture.summary()
