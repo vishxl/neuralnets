@@ -88,3 +88,16 @@ from keras.models import model_from_json
 model_architecture = model_from_json(json_string)
 
 model_architecture.summary()
+
+#model.save_weights()
+
+model.save_weights('my_model_weights.h5')
+model2 = Sequential([
+    Dense(16, input_shape=(1,), activation='relu'),
+    Dense(32, activation='relu'),
+    Dense(2, activation='softmax')
+])
+
+model2.load_weights('my_model_weights.h5')
+
+
