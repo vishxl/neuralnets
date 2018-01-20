@@ -132,3 +132,13 @@ test_samples = np.array(test_samples)
 scaler = MinMaxScaler(feature_range=(0,1))
 scaled_test_samples = scaler.fit_transform((test_samples).reshape(-1,1))
 
+predictions = model.predict(scaled_test_samples, batch_size=10, verbose=0)
+for i in predictions:
+    print(i)
+    
+  rounded_predictions = model.predict_classes(scaled_test_samples, batch_size=10, verbose=0)
+
+    
+for i in rounded_predictions:
+    print(i)
+
