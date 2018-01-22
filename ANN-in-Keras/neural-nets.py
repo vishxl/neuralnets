@@ -142,3 +142,11 @@ for i in predictions:
 for i in rounded_predictions:
     print(i)
 
+
+    
+ #confusion matrix
+
+%matplotlib inline
+from sklearn.metrics import confusion_matrix
+import itertools
+import matplotlib.pyplot as plt
