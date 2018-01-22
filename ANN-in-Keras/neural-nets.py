@@ -150,3 +150,5 @@ for i in rounded_predictions:
 from sklearn.metrics import confusion_matrix
 import itertools
 import matplotlib.pyplot as plt
+
+cm = confusion_matrix(test_labels, rounded_predictions)
