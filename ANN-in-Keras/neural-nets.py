@@ -187,3 +187,6 @@ def plot_confusion_matrix(cm, classes,
     plt.tight_layout()
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
+    
+cm_plot_labels = ['no_side_effects','had_side_effects']
+plot_confusion_matrix(cm, cm_plot_labels, title='Confusion Matrix')
