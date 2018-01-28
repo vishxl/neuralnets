@@ -13,3 +13,8 @@ def generate_data():
     np.random.seed(0)
     X, y = datasets.make_moons(200, noise=0.20)
     return X, y
+
+def visualize(X, y, model):
+    plot_decision_boundary(lambda x:predict(model,x), X, y)
+    plt.title("Logistic Regression")
+
