@@ -29,7 +29,7 @@ def plot_decision_boundary(pred_func, X, y):
     plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.Spectral)
     plt.show()
 def calculate_loss(model, X, y):
-    num_examples = len(y)  
+    num_examples = len(X)  
     W1, b1, W2, b2 = model['W1'], model['b1'], model['W2'], model['b2']
     
     z1 = X.dot(W1) + b1
