@@ -52,3 +52,11 @@ def predict(model, x):
     exp_scores = np.exp(z2)
     probs = exp_scores / np.sum(exp_scores, axis=1, keepdims=True)
     return np.argmax(probs, axis=1)
+
+def build_model(X, y, nn_hdim, num_passes=20000, print_loss=False):
+    num_examples = len(X)
+    np.random.seed(0)
+    W1 = np.random.randn(Config.nn_input_dim, nn_hdim) / np.sqrt(Config.nn_input_dim)
+    b1 = np.zeros((1, nn_hdim))
+    W2 = np.random.randn(nn_hdim, Config.nn_output_dim) / np.sqrt(nn_hdim)
+    b2 = np.zeros((1, Config.nn_output_dim))
