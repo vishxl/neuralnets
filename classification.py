@@ -60,3 +60,9 @@ def build_model(X, y, nn_hdim, num_passes=20000, print_loss=False):
     b1 = np.zeros((1, nn_hdim))
     W2 = np.random.randn(nn_hdim, Config.nn_output_dim) / np.sqrt(nn_hdim)
     b2 = np.zeros((1, Config.nn_output_dim))
+
+    
+    model = {}
+
+    for i in range(0, num_passes):
+
