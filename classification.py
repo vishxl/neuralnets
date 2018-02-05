@@ -65,4 +65,9 @@ def build_model(X, y, nn_hdim, num_passes=20000, print_loss=False):
     model = {}
 
     for i in range(0, num_passes):
+        z1 = X.dot(W1) + b1
+        a1 = np.tanh(z1)
+        z2 = a1.dot(W2) + b2
+        exp_scores = np.exp(z2)
+        probs = exp_scores / np.sum(exp_scores, axis=1, keepdims=True)
 
