@@ -80,4 +80,14 @@ def build_model(X, y, nn_hdim, num_passes=20000, print_loss=False):
         dW1 = np.dot(X.T, delta2)
         db1 = np.sum(delta2, axis=0)
 
+  dW2 += Config.reg_lambda * W2
+        dW1 += Config.reg_lambda * W1
+
+        # Gradient descent parameter update
+        W1 += -Config.epsilon * dW1
+        b1 += -Config.epsilon * db1
+        W2 += -Config.epsilon * dW2
+        b2 += -Config.epsilon * db2
+        
+  
 
