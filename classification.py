@@ -104,4 +104,12 @@ def classify(X, y):
 
     pass
 
+def main():
+    X, y = generate_data()
+    model = build_model(X, y, 3, print_loss=True)
+    visualize(X, y, model)
+
+
+if __name__ == "__main__":
+    main()
 
