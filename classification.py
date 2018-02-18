@@ -91,5 +91,17 @@ def build_model(X, y, nn_hdim, num_passes=20000, print_loss=False):
         
  model = {'W1': W1, 'b1': b1, 'W2': W2, 'b2': b2}
         
-  
+   if print_loss and i % 1000 == 0:
+            print("Loss after iteration %i: %f" % (i, calculate_loss(model, X, y)))
+
+    return model
+
+
+def classify(X, y):
+    # clf = linear_model.LogisticRegressionCV()
+    # clf.fit(X, y)
+    # return clf
+
+    pass
+
 
